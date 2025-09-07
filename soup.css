@@ -82,22 +82,27 @@ html, body {
   
   .ingredient p {
     margin: 0;
-    font-size: 1.5rem;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px 8px;
+    font-size: 1rem; /* slightly smaller for mobile friendliness */
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px 12px;
     border-radius: 8px;
     opacity: 0;
-    pointer-events: none;       /* disable pointer so only img triggers hover */
+    pointer-events: none;
     transition: opacity 0.3s ease;
     position: absolute;
-    bottom: 110%;               /* position above the ingredient image */
+    bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
-    white-space: nowrap;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     user-select: none;
     z-index: 10;
+  
+    white-space: normal;     /* ✅ allow wrapping */
+    max-width: 80vw;         /* ✅ responsive width */
+    text-align: center;      /* optional: center text */
+    line-height: 1.4;        /* improves readability */
   }
+  
   
   .ingredient:hover p {
     opacity: 1;
