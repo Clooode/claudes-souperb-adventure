@@ -7,13 +7,18 @@ html, body {
     color: #4e342e;
   }
   
-  .soup-main {
-    height: 100vh;      /* exactly full viewport */
+  .soup-banner {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;  /* bowl sits at bottom */
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;      /* small gap between images in banner */
+    margin-bottom: 0; /* remove extra space below banner */
+    padding-bottom: 0;
   }
+  .soup-bowl {
+    margin-top: 20px; /* space between banner and bowl */
+  }
+  
   
   .soup-bowl {
     width: 90vw;
@@ -21,10 +26,12 @@ html, body {
     aspect-ratio: 1 / 1;
     background: url('assets/soup.png') no-repeat center bottom;
     background-size: contain;
+    margin: 0 auto; /* center horizontally */
     position: relative;
-    margin-bottom: 0;
-    z-index: 1;
+    /* Remove any positioning like absolute or bottom */
+    /* So it sits naturally in the flow just below banner */
   }
+  
   
   .soup-banner {
     display: flex;
