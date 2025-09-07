@@ -90,7 +90,9 @@ html, body {
     /** 🧠 The key properties for wrapping & responsiveness: **/
     white-space: normal;
     word-break: break-word;
-    max-width: 90vw;
+    word-break: normal;              /* ⛔ prevent breaking mid-word */
+    max-width: 300px;                /* ✅ limit width without forcing it to be narrow on mobile */
+    width: max-content;  
     box-sizing: border-box;
     line-height: 1.4;
     text-align: center;
