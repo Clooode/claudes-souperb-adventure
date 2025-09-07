@@ -27,7 +27,7 @@ const questions = [
       options: ["Modifying the energy of the virtual orbitals when constructing the Fock operator, through level-shifting",
       "Combining the results of multiple steps to estimate the most accurate Fock operator matrix for the following step",
       "Carefully choosing the initial set of coefficients cij, so that the 'guess' for the wavefunction is as close as possible to the final Hartree-Fock wavefunction",
-      "Re-calculating some of the two-electron integrals  at each step"],
+      "Re-calculating some of the two-electron integrals at each step"],
     correct: "Re-calculating some of the two-electron integrals at each step"
     }
 ,
