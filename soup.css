@@ -16,7 +16,9 @@ body {
     width: 95vw;       /* almost full width on mobile */
     max-width: none;   /* remove desktop max-width */
     aspect-ratio: 1 / 1;
-    bottom: 0;         /* keep it flush at the bottom */
+    bottom: 0; 
+    height: 60vh; /* set a height based on viewport height */
+    /* keep it flush at the bottom */
   }
   
   /* Make ingredient images smaller on small devices */
