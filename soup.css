@@ -15,10 +15,6 @@ html, body {
     margin-bottom: 0; /* remove extra space below banner */
     padding-bottom: 0;
   }
-  .soup-bowl {
-    margin-top: 20px; /* space between banner and bowl */
-  }
-  
   
   .soup-bowl {
     width: 90vw;
