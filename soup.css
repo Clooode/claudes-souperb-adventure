@@ -73,8 +73,8 @@ html, body {
   }
 
   .ingredient p {
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.9);
     padding: 10px 14px;
     border-radius: 8px;
     opacity: 0;
@@ -87,15 +87,12 @@ html, body {
     user-select: none;
     z-index: 10;
   
-    /** 🧠 The key properties for wrapping & responsiveness: **/
-    white-space: normal;
-    word-break: break-word;
-    word-break: normal;              /* ⛔ prevent breaking mid-word */
-    max-width: 300px;                /* ✅ limit width without forcing it to be narrow on mobile */
-    width: max-content;  
-    box-sizing: border-box;
-    line-height: 1.4;
+    width: 50vw;                    /* ✅ fixed tooltip width */
+    white-space: normal;           /* ✅ allow wrapping */
+    word-break: break-word;        /* ✅ wrap long words if needed */
     text-align: center;
+    line-height: 1.4;
+    box-sizing: border-box;
   }
   
   
