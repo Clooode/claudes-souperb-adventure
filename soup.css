@@ -1,50 +1,116 @@
-
-
-/* Mobile-friendly base */
-body {
-    font-size: 16px; /* base font size */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background: url('assets/background.jpg') no-repeat center top;
+    background-size: cover;
+    color: #4e342e;
   }
   
-  /* Make sure banner images don’t get too tall or wide on small screens */
-  .soup-banner img {
-    height: auto;      /* let height adjust based on width */
-    max-width: 90vw;   /* max 90% of viewport width */
+  .soup-main {
+    height: 100vh;      /* exactly full viewport */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  /* bowl sits at bottom */
+    overflow: hidden;
   }
   
-  /* Adjust the soup bowl on smaller screens */
   .soup-bowl {
-    width: 95vw;       /* almost full width on mobile */
-    max-width: none;   /* remove desktop max-width */
+    width: 90vw;
+    max-width: 800px;
     aspect-ratio: 1 / 1;
-    bottom: 0; 
-    height: 60vh; /* set a height based on viewport height */
-    /* keep it flush at the bottom */
+    background: url('assets/soup.png') no-repeat center bottom;
+    background-size: contain;
+    position: relative;
+    margin-bottom: 0;
+    z-index: 1;
   }
   
-  /* Make ingredient images smaller on small devices */
+  .soup-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    gap: 10px; /* some vertical spacing */
+  }
+  
+  .soup-banner img {
+    display: block;
+    max-width: 100%;
+    height: 100px;
+  }
+  
+  /* Make the top image 80% width relative to the bottom image */
+  .soup-banner img:first-child {
+    width: 30%;
+  }
+  
+  .soup-banner img:last-child {
+    width: 100%;
+  }
+  
+  
+  
+  .ingredient {
+    position: absolute;  /* position relative to .soup-bowl */
+    /* center the element on its top/left */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: auto;
+    user-select: none;
+    cursor: default;
+  }
+  
+  
   .ingredient img {
-    width: 40px;  /* smaller icons for easier spacing */
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px;
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.6)); /* subtle orange glow */
+    transition: filter 0.3s ease;
+    cursor: pointer;         /* pointer on hover */
   }
   
-  /* Tooltip text smaller and easier to read */
+  .ingredient:hover img {
+    filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.9))
+            drop-shadow(0 0 10px rgba(255, 255, 0, 0.7)); /* stronger glow on hover */
+  }
+  
   .ingredient p {
-    font-size: 1rem;
-    padding: 4px 6px;
+    margin: 0;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 8px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;       /* disable pointer so only img triggers hover */
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 110%;               /* position above the ingredient image */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    user-select: none;
+    z-index: 10;
   }
   
-  /* Floating animation slower on mobile for better performance */
-  @media (max-width: 600px) {
-    .ingredient {
-      animation-duration: 10s;
-    }
+  .ingredient:hover p {
+    opacity: 1;
+    pointer-events: auto;
+  }
   
-    .soup-banner {
-      gap: 5px;
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
     }
-  
-    .soup-main {
-      height: auto;
-      padding-bottom: 20px; /* space at bottom for bowl */
+    50% {
+      transform: translateY(-10px) rotate(2deg);
     }
   }
+  
+  
+  
   
