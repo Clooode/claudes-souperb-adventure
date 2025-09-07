@@ -17,7 +17,7 @@ body {
   .soup-banner img {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 100px;
   }
   
   /* Make the top image 80% width relative to the bottom image */
@@ -84,7 +84,7 @@ body {
   
   .ingredient p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     background: rgba(255, 255, 255, 0.8);
     padding: 5px 8px;
     border-radius: 8px;
