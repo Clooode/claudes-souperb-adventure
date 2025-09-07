@@ -1,0 +1,71 @@
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+.start-screen {
+  text-align: center;
+  background: #2a2a2a;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.start-screen button {
+  background-color: #ff99cc;
+  color: #006600;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.start-screen button:hover {
+  background-color: #f5ffabed;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.answers button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.answers button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+.hidden {
+  display: none;
+}
