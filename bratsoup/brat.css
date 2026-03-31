@@ -1,0 +1,92 @@
+:root {
+    --brat-green: #8ACE00;
+    --black: #000000;
+    --white: #ffffff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--brat-green);
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: var(--black);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  
+  /* Main container */
+  .container {
+    text-align: center;
+  }
+  
+
+
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 150px;
+    transform: scaleY(1.6); /* stretch vertically */
+    display: inline-block; /* REQUIRED for transform */
+    margin-bottom: 20px;
+    filter: blur(0.4px);
+    text-shadow: 0 0 1px black;
+  }
+  
+  /* Subtext */
+  p {
+    font-size: 60px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    filter: blur(0.3px);
+    text-shadow: 0 0 1px black;
+    opacity: 0.8;
+    transform: scaleY(1.4); /* stretch vertically */
+
+  }
+
+  body {
+    filter: contrast(1.1) saturate(1.1);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  body {
+    letter-spacing: -0.5px;
+  }
+
+
+
+  button:hover {
+    transform: translateX(2px);
+  }
+  
+  .btn {
+    margin-top: 80px;
+    padding: 10px 20px;
+    background: black;
+    color: #8ACE00;
+    font-weight: 800;
+    border: none;
+    transform: rotate(-1deg);
+  }
+  .btn:hover {
+    background: white;
+    color: black;
+  }
+
+  
