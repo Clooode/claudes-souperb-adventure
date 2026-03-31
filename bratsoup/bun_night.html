@@ -11,12 +11,49 @@
   <div class="container">
     <h1>s.o.u.p.</h1>
     <p>and it's completely different food</p>
-    <p>but it's still soup night</p>
+
+    <p id="dynamic-text"></p>
 
 
     <a class="btn" href="https://whenisgood.net/howsouperb" target="_blank">
         let me know if u want to come or whatever
       </a>  </div>
 
+      <p style="position: fixed; bottom: 10px; right: 10px; margin: 0; font-size: 12px; opacity: 0.7;">
+        plz message me if you are going to bring anything
+      </p>
 </body>
+
+
+<script>
+const text = "but it's still soup"
+const element = document.getElementById("dynamic-text");
+let index = 0;
+let deleting = false;
+
+function typeEffect() {
+  if (!deleting) {
+    index++;
+    element.textContent = text.substring(0, index);
+    element.classList.add("blinking-cursor");
+    if (index === text.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1000); // pause before deleting
+      return;
+    }
+  } else {
+    index--;
+    element.textContent = text.substring(0, index);
+    if (index === 0) {
+      deleting = false;
+      setTimeout(typeEffect, 500); // pause before typing again
+      return;
+    }
+  }
+  setTimeout(typeEffect, deleting ? 50 : 150); // speed of deleting/typing
+}
+
+typeEffect();
+
+</script>
 </html>

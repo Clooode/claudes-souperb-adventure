@@ -89,4 +89,14 @@
     color: black;
   }
 
+  .blinking-cursor::after {
+    content: "|";
+    animation: blink 1s step-start infinite;
+    margin-left: 2px;
+    color: black; /* cursor color */
+  }
   
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
